@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 
-<h2>Lista zadań</h2>
+<h2>Biblioteka</h2>
 
 <table>
     <thead>
     <th>Tytuł</th>
-    <th>Opis</th>
-    <th>Czy zrobione?</th>
+    <th>Autor</th>
+    <th>Czy przeczytana</th>
     </thead>
 {% for todo in todos %}
     <tr>
@@ -26,7 +26,7 @@
 {% endfor %}
 </table>
 <div>
-    <h2> Dodaj nowe zadanie: </h2>
+    <h2> Dodaj nową książkę: </h2>
     <form method="POST" action="/todos/">
         {{ form.hidden_tag() }}
         <table>
