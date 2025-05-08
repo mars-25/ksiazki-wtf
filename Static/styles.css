@@ -1,5 +1,5 @@
 h2 {
-    background-color: rgb(230, 198, 151); /* Możesz zmienić na inny kolor */
+    background-color: rgb(230, 198, 151); 
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 34px;
@@ -24,23 +24,23 @@ input[type="range"]::-webkit-slider-thumb {
     cursor: pointer;
 }*/
 th {
-    background-color: #e6dada;
+    background-color: #e4e695;
     color: rgb(15, 19, 2);
     font-weight: bold;
     padding: 10px;
 }
 td {
-    background-color: #beb420;
+    background-color: #d4ce58;
     padding: 8px;
 }
 #title {
-    background-color: #6d5699;
+    background-color: #569972;
 }
 #author {
-    background-color: #6d5699;
+    background-color: #569972;
 }
 #description {
-    background-color: aqua;
+    background-color: rgb(202, 224, 224);
     width: 400px;
     height: 50px;
 }
@@ -53,7 +53,7 @@ input, select {
 
 }
 input, select {
-    color: rgb(15, 15, 126); /* Kolor czcionki */
+    color: rgb(0, 0, 0); /* Kolor czcionki */
     width: 400px; /* Szerokość */
     height: 40px; /* Wysokość */
 }
@@ -61,7 +61,7 @@ input, select {
 
 
 body {
-    background-color: rgb(69, 80, 70); /* Zmiana tła na jasnoniebieski */
+    background-color: rgb(69, 80, 70); /* Zmiana tła  */
 }
 td {
     text-align: center;
@@ -69,12 +69,50 @@ td {
 }
 
 input[type="submit"] {  /*przycisk */
-    background-color: yellowgreen;
+    background-color: rgb(46, 202, 41);
     width: auto;
     color: black, strong;
     border: none;
     cursor: pointer;
-    border: 2px solid rgb(21, 114, 27); /* Czarna obwódka */
+    border: 2px solid rgb(22, 95, 27); /* Czarna obwódka */
     padding: 8px 12px;
     font-size: 16px;
+}
+
+a[href*="sort_by=author"] {
+    color: blue; /* Zmienia kolor tekstu na niebieski */
+    font-weight: bold; /* Opcjonalnie: pogrubienie */
+    text-decoration: none; /* Usuwa podkreślenie */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+a[href*="sort_by=author"]:hover {
+    color: rgb(0, 0, 0); /* Zmienia kolor po najechaniu */
+    text-decoration: underline; /* Dodaje podkreślenie */
+}
+
+a[href*="sort_by=rating"] {
+    color: green; /* Zmienia kolor tekstu na zielony */
+    font-weight: bold; /* Opcjonalnie: pogrubienie */
+    text-decoration: none; /* Usuwa podkreślenie */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+a[href*="sort_by=rating"]:hover {
+    color: rgb(0, 0, 0); /* Zmienia kolor po najechaniu */
+    text-decoration: underline; /* Dodaje podkreślenie */
+}
+
+td a {
+    color: darkblue; /* Ustawia kolor czcionki */
+    font-size: 18px; /* Powiększa czcionkę */
+    font-weight: bold; /* Pogrubia tekst */
+    text-decoration: none; /* Usuwa podkreślenie */
+}
+
+td a:hover {
+    color: navy; /* Zmienia kolor po najechaniu */
+    text-decoration: underline; /* Dodaje podkreślenie po najechaniu myszką */
 }

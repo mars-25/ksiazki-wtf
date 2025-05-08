@@ -10,13 +10,26 @@ app.config["SECRET_KEY"] = "nininini"
 def todos_list():
     form = TodoForm()
     error = ""
+
     if request.method == "POST":
         if form.validate_on_submit():
             todos.create(form.data)
             todos.save_all()
         return redirect(url_for("todos_list"))
 
-    return render_template("todos.html", form=form, todos=todos.all(), error=error)
+    #Pobranie listy książek
+    todos_list = todos.all()
+
+    #Pobranie parametru sortowania z URL
+    sort_by = request.args.get("sort_by")
+
+    #Sortowanie według autora lub oceny
+    if sort_by == "author":
+        todos_list = sorted(todos_list, key=lambda x: x["author"].lower())  # Sortowanie alfabetycznie według autora
+    elif sort_by == "rating":
+        todos_list = sorted(todos_list, key=lambda x: int(x["bookrating"]), reverse=True)  # Sortowanie według oceny (malejąco)
+
+    return render_template("todos.html", form=form, todos=todos_list, error=error)
 
 
 @app.route("/todos/<int:todo_id>/", methods=["GET", "POST"])
