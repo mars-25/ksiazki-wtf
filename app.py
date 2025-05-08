@@ -6,6 +6,11 @@ from models import todos
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "nininini"
 
+@app.route("/")
+def home():
+    todos_list=todos.all() #pobranie zapisanych książek
+    return render_template("index.html", todos=todos_list)
+
 @app.route("/todos/", methods=["GET", "POST"])
 def todos_list():
     form = TodoForm()

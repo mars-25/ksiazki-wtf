@@ -116,3 +116,66 @@ td a:hover {
     color: navy; /* Zmienia kolor po najechaniu */
     text-decoration: underline; /* Dodaje podkreślenie po najechaniu myszką */
 }
+
+.container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+h1 a {
+    font-size: 120px; /* Duży napis */
+    font-weight: bold;
+    text-decoration: none;
+    color: darkblue;
+}
+
+h1 a:hover {
+    color: navy;
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: disc; /* Kształt punktów (możesz użyć circle lub disc lub square) */
+    font-size: 20px;
+}
+
+li {
+    margin-bottom: 10px; /* Odstęp między elementami */
+}
+
+.library-title {
+    position: relative; /* Pozycjonowanie kontenera */
+    text-align: center;
+}
+
+.tooltip {
+    position: absolute;
+    top: -40px; /* Większe przesunięcie nad "BIBLIOTEKA" */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    color: gray;
+    background: white;
+    padding: 5px;
+    border: 1px solid black;
+    opacity: 0; /* Ukryty na start */
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10; /* Zapewnia widoczność nad innymi elementami */
+    pointer-events: none; /* Zapobiega kolizji z myszką */
+}
+
+.library-title:hover .tooltip {
+    opacity: 1; /* Pokazuje tooltip po najechaniu */
+}
+
+a {
+    font-size: 20px;
+    font-weight: bold;
+    color: darkblue;
+    text-decoration: none;
+}
+
+a:hover {
+    color: royalblue;
+    text-decoration: underline;
+}

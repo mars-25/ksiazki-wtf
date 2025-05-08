@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteka</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="library-title">
+            <span class="tooltip">Tutaj edycja twej biblioteki</span>
+            <a href="{{ url_for('todos_list') }}">BIBLIOTEKA</a>
+        </h1>
+
+        <h2>Lista zapisanych książek:</h2>
+        <ul>
+            {% for todo in todos %}
+            <li><strong>{{ todo.title }}</strong> – {{ todo.author }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
