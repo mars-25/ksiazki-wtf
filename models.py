@@ -28,5 +28,9 @@ class Todos:
         self.todos[id] = data
         self.save_all()
 
+    def delete(self, index):
+        if 0 <= index < len(self.todos):
+            del self.todos[index]
+
 
 todos = Todos()

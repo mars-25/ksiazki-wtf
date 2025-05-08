@@ -30,6 +30,12 @@ def todo_details(todo_id):
         return redirect(url_for("todos_list"))
     return render_template("todo.html", form=form, todo_id=todo_id)
 
+@app.route("/todos/<int:todo_id>/delete", methods=["POST"])
+def delete_todo(todo_id):
+    todos.delete(todo_id - 1)  # Usuwanie książki z listy
+    todos.save_all()  # Zapisanie zmian
+    return redirect(url_for("todos_list"))
+
 
 if __name__ == "__main__":
     app.run(debug=True)

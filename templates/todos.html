@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <title>Tu tworzymy todo i widzimy listę</title>
@@ -13,15 +13,23 @@
 
 <table>
     <thead>
-    <th>Tytuł</th>
-    <th>Autor</th>
-    <th>Czy przeczytana</th>
+        <th>Tytuł</th>
+        <th>Autor</th>
+        <th>Opis</th>
+        <th>Ocena</th>
+        <th>Usuń z biblioteki</th>
     </thead>
 {% for todo in todos %}
     <tr>
         <td><a href="/todos/{{ loop.index }}">{{ todo.title }}</a></td>
-        <td>{{ todo.description }}</td>
-        <td>{{ todo.done }}</td>
+        <td>{{ todo.author }}</td> <!--Autor-->
+        <td>{{ todo.description }}</td> <!--Opis książki-->
+        <td>{{ todo.bookrating }}</td> <!--Ocena-->
+        <td>
+            <form method="POST" action="/todos/{{ loop.index }}/delete">
+                <input type="submit" value="Usuń">
+            </form>
+        </td>
     </tr>
 {% endfor %}
 </table>
@@ -32,7 +40,7 @@
         <table>
             {% for field in form if field.widget.input_type != 'hidden' %}
                 <tr>
-                    <th>{{ field.label }} {% if field.flags.required %}*{% endif %}</th>
+                    <th>{{ field.label }} <!--{% if field.flags.required %}*{% endif %} WIDOCZNOŚĆ GWIAZDKI--></th>
                     <td>{{ field }}</td>
                 </tr>
             {% endfor %}
